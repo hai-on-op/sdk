@@ -5,31 +5,35 @@ import { BigNumberish, BigNumber, FixedNumber } from '@ethersproject/bignumber'
 /**
  * byte32 value for the "ETH-A" collateral
  */
-const ETH_A =
-    '0x4554482d41000000000000000000000000000000000000000000000000000000'
+const ETH_A = '0x4554482d41000000000000000000000000000000000000000000000000000000'
 /**
  * byte32 value for the "WETH" collateral
  */
-const WETH =
-    '0x5745544800000000000000000000000000000000000000000000000000000000'
+const WETH = '0x5745544800000000000000000000000000000000000000000000000000000000'
 /**
  * byte32 value for the "OP" collateral
  */
 const OP = '0x4f50000000000000000000000000000000000000000000000000000000000000'
 
 /**
+ * byte32 value for the "WBTC" collateral
+ */
+const WBTC = '0x5742544300000000000000000000000000000000000000000000000000000000'
+
+/**
+ * byte32 value for the "STONES" collateral
+ */
+const STONES = '0x53544f4e45530000000000000000000000000000000000000000000000000000'
+
+/**
+ * byte32 value for the "TOTEM" collateral
+ */
+const TOTEM = '0x544f54454d000000000000000000000000000000000000000000000000000000'
+
+/**
  * 0x0 address or burn address
  */
 const NULL_ADDRESS = '0x0000000000000000000000000000000000000000'
-
-/**
- * mapping from byte32 to collateral type name
- */
-const COLLATERAL_TYPES: { [byte32Value: string]: string } = {
-    [WETH]: 'WETH',
-    [OP]: 'OP',
-    [ETH_A]: 'ETH_A',
-}
 
 /**
  * Constant 10^18
@@ -107,9 +111,7 @@ const getRequireString = (error: any): string | null => {
 
     if (hexerrorArray) {
         // Convert from hex to UTF-8 string
-        return decodeURIComponent(
-            hexerrorArray[0].slice(12).replace(/[0-9a-f]{2}/g, '%$&')
-        )
+        return decodeURIComponent(hexerrorArray[0].slice(12).replace(/[0-9a-f]{2}/g, '%$&'))
             .replace(/\0/g, '')
             .slice(2)
     } else {
@@ -122,7 +124,9 @@ export {
     WETH,
     OP,
     ETH_A,
-    COLLATERAL_TYPES,
+    WBTC,
+    STONES,
+    TOTEM,
     NULL_ADDRESS,
     WAD,
     RAY,

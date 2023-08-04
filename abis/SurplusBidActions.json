@@ -1,28 +1,18 @@
 [
   {
+    "inputs": [],
+    "name": "OnlyDelegateCalls",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
-        "name": "tokenAddress",
+        "name": "_coinJoin",
         "type": "address"
       }
     ],
-    "name": "claimProxyFunds",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "apt", "type": "address" },
-      {
-        "internalType": "address",
-        "name": "safeHandler",
-        "type": "address"
-      },
-      { "internalType": "uint256", "name": "wad", "type": "uint256" }
-    ],
-    "name": "coinJoin_join",
+    "name": "exitAllSystemCoins",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -31,35 +21,39 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "coinJoin",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "auctionHouse",
+        "name": "_coinJoin",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "auctionId",
+        "name": "_coinsToExit",
+        "type": "uint256"
+      }
+    ],
+    "name": "exitSystemCoins",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_surplusAuctionHouse",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_auctionId",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "amountToBuy",
+        "name": "_bidAmount",
         "type": "uint256"
       }
     ],
-    "name": "decreaseSoldAmount",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "coinJoin", "type": "address" }
-    ],
-    "name": "exitAllCoin",
+    "name": "increaseBidSize",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -68,31 +62,40 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "coinJoin",
-        "type": "address"
-      },
-      { "internalType": "uint256", "name": "wad", "type": "uint256" }
-    ],
-    "name": "exitCoin",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "coinJoin",
+        "name": "_coinJoin",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "auctionHouse",
+        "name": "_safeHandler",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "auctionId",
+        "name": "_wad",
+        "type": "uint256"
+      }
+    ],
+    "name": "joinSystemCoins",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_coinJoin",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_surplusAuctionHouse",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_auctionId",
         "type": "uint256"
       }
     ],
@@ -105,21 +108,16 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "coinJoin",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "accountingEngineAddress",
+        "name": "_accountingEngine",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "amountToBuy",
+        "name": "_bidAmount",
         "type": "uint256"
       }
     ],
-    "name": "startAndDecreaseSoldAmount",
+    "name": "startAndIncreaseBidSize",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
