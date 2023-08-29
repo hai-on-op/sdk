@@ -3,7 +3,7 @@
   "version": "1.2.0-rc.2",
   "description": "Javascript client for HAI",
   "license": "MIT",
-  "main": "./lib/index.js",
+  "main": "lib",
   "files": [
     "lib"
   ],
