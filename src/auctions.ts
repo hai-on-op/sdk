@@ -16,14 +16,14 @@ import {
     RestartAuctionEventFilter as SurplusRestartAuctonEventFilter,
     SettleAuctionEventFilter as SurplusSettleAuctionEventFilter,
     StartAuctionEventFilter as SurplusStartAuctionEventFilter,
-} from './typechained/SurplusAuctionHouse'
+} from './typechained/imported/ISurplusAuctionHouse'
 
 import {
     DecreaseSoldAmountEventFilter as DebtDecreaseSoldAmountEventFilter,
     RestartAuctionEventFilter as DebtRestartAuctonEventFilter,
     SettleAuctionEventFilter as DebtSettleAuctionEventFilter,
     StartAuctionEventFilter as DebtStartAuctionEventFilter,
-} from './typechained/DebtAuctionHouse'
+} from './typechained/imported/IDebtAuctionHouse'
 
 /**
  * The main package used to interact with the GEB system. Includes [[deployProxy |helper functions]] for safe
