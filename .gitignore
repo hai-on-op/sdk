@@ -4,5 +4,8 @@ lib
 
 packages/*/tsconfig.tsbuildinfo
 src/typechained
+src/artifacts
 *.tgz
 package
+yarn-error.log
+tmp

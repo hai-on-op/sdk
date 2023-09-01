@@ -1,15 +1,16 @@
 {
   "name": "@hai-on-op/sdk",
-  "version": "1.0.1-rc.0",
-  "description": "Javascript client for GEB reflex indexes",
+  "version": "1.2.0-rc.5",
+  "description": "Javascript client for HAI",
   "license": "MIT",
-  "main": "./lib/index.js",
+  "main": "lib",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "yarn generate-types && tsc",
-    "generate-types": "yarn typechain --target ethers-v5 --out-dir src/typechained './abis/*.json'",
+    "prebuild": "yarn --cwd ./solidity install && yarn --cwd ./solidity compile",
+    "build": "sh ./group-abis.sh && yarn generate-types && tsc",
+    "generate-types": "typechain --target ethers-v5 --out-dir src/typechained --glob ./tmp/abis/**/*.json",
     "lint:check": "prettier --check .",
     "lint:fix": "sort-package-json && prettier --write .",
     "prepare": "husky install",
@@ -20,6 +21,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@hai-on-op/abis": "0.1.2",
     "ethers": "5.4.7"
   },
   "devDependencies": {
