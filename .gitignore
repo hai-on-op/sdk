@@ -8,4 +8,4 @@ src/artifacts
 *.tgz
 package
 yarn-error.log
-abis/imported
+tmp

@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "prebuild": "yarn --cwd ./solidity install && yarn --cwd ./solidity compile",
-    "build": "sh ./move-abis.sh && yarn generate-types && tsc",
-    "generate-types": "typechain --target ethers-v5 --out-dir src/typechained --glob ./abis/**/*.json",
+    "build": "sh ./group-abis.sh && yarn generate-types && tsc",
+    "generate-types": "typechain --target ethers-v5 --out-dir src/typechained --glob ./tmp/abis/**/*.json",
     "lint:check": "prettier --check .",
     "lint:fix": "sort-package-json && prettier --write .",
     "prepare": "husky install",
