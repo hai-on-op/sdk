@@ -1,4 +1,4 @@
-import { WETH, OP, WBTC, STONES, TOTEM } from '../utils'
+import { WETH, OP, SNX, WBTC, STONES, TOTEM } from '../utils'
 
 // All keys are mandatory
 export type ContractKey =
@@ -148,6 +148,15 @@ const tokens: Record<GebDeployment, TokenList> = {
             bytes32String: OP,
             collateralJoin: '0x4A54a29b9bA80bfd0056E8E7a96329E4e6906d6d',
             collateralAuctionHouse: '0x742De44F54b157a73484816ECBe71769861956A4',
+            isCollateral: true,
+        },
+        SNX: {
+            address: '0x2E5ED97596a8368EB9E44B1f3F25B2E813845303',
+            decimals: 18,
+            symbol: 'SNX',
+            bytes32String: SNX,
+            collateralJoin: '0xa8A6105Fb76bef801E0067F1C65a4F9aeBf3323A',
+            collateralAuctionHouse: '0x8E3C90EDfBba3c344F6E08051F115e23c8da4770',
             isCollateral: true,
         },
         WBTC: {
