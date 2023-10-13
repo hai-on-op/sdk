@@ -14,7 +14,10 @@ const WETH = '0x5745544800000000000000000000000000000000000000000000000000000000
  * byte32 value for the "OP" collateral
  */
 const OP = '0x4f50000000000000000000000000000000000000000000000000000000000000'
-
+/**
+ * byte32 value for the "SNX" collateral
+ */
+const SNX = '0x534e580000000000000000000000000000000000000000000000000000000000'
 /**
  * byte32 value for the "WBTC" collateral
  */
@@ -123,6 +126,7 @@ export {
     // Constants
     WETH,
     OP,
+    SNX,
     ETH_A,
     WBTC,
     STONES,
