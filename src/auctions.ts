@@ -59,19 +59,26 @@ export class Auctions {
         this.debtSettleAuctionFilter = this.contracts.debtAuctionHouse.filters.SettleAuction()
     }
 
-    public getSurplusAuctions(fromBlock: number): Promise<{ auctions: ISurplusAuction[] }> {
+    public getSurplusAuctions(fromBlock: number, toBlock?: number): Promise<{ auctions: ISurplusAuction[] }> {
         const startAuctionEvents = this.contracts.surplusAuctionHouse.queryFilter(
             this.surplusStartAuctionFilter,
-            fromBlock
+            fromBlock,
+            toBlock
         )
-        const bidFilterEvents = this.contracts.surplusAuctionHouse.queryFilter(this.surplusBidFilter, fromBlock)
+        const bidFilterEvents = this.contracts.surplusAuctionHouse.queryFilter(
+            this.surplusBidFilter,
+            fromBlock,
+            toBlock
+        )
         const restartAuctionEvents = this.contracts.surplusAuctionHouse.queryFilter(
             this.surplusRestartAuctionFilter,
-            fromBlock
+            fromBlock,
+            toBlock
         )
         const settledAuctionEvents = this.contracts.surplusAuctionHouse.queryFilter(
             this.surplusSettleAuctionFilter,
-            fromBlock
+            fromBlock,
+            toBlock
         )
 
         return Promise.all([startAuctionEvents, bidFilterEvents, restartAuctionEvents, settledAuctionEvents]).then(
@@ -104,19 +111,26 @@ export class Auctions {
         )
     }
 
-    public getDebtAuctions(fromBlock: number): Promise<{ auctions: IDebtAuction[] }> {
-        const startAuctionEvents = this.contracts.debtAuctionHouse.queryFilter(this.debtStartAuctionFilter, fromBlock)
+    public getDebtAuctions(fromBlock: number, toBlock?: number): Promise<{ auctions: IDebtAuction[] }> {
+        const startAuctionEvents = this.contracts.debtAuctionHouse.queryFilter(
+            this.debtStartAuctionFilter,
+            fromBlock,
+            toBlock
+        )
         const bidFilterEvents = this.contracts.debtAuctionHouse.queryFilter(
             this.debtDecreaseSoldAmountFilter,
-            fromBlock
+            fromBlock,
+            toBlock
         )
         const restartAuctionEvents = this.contracts.debtAuctionHouse.queryFilter(
             this.debtRestartAuctionFilter,
-            fromBlock
+            fromBlock,
+            toBlock
         )
         const settledAuctionEvents = this.contracts.debtAuctionHouse.queryFilter(
             this.debtSettleAuctionFilter,
-            fromBlock
+            fromBlock,
+            toBlock
         )
 
         return Promise.all([startAuctionEvents, bidFilterEvents, restartAuctionEvents, settledAuctionEvents]).then(
@@ -147,16 +161,20 @@ export class Auctions {
         )
     }
 
-    public getCollateralAuctions(fromBlock: number, collateral: string): Promise<{ auctions: ICollateralAuction[] }> {
+    public getCollateralAuctions(
+        collateral: string,
+        fromBlock: number,
+        toBlock?: number
+    ): Promise<{ auctions: ICollateralAuction[] }> {
         const collateralAuctionHouse = this.contracts.tokenCollateralAuctionHouse[collateral]
         const startFilter = collateralAuctionHouse.filters.StartAuction()
         const buyCollateralFilter = collateralAuctionHouse.filters.BuyCollateral()
         const settleAuctionFilter = collateralAuctionHouse.filters.SettleAuction()
 
         return Promise.all([
-            collateralAuctionHouse.queryFilter(startFilter, fromBlock),
-            collateralAuctionHouse.queryFilter(buyCollateralFilter, fromBlock),
-            collateralAuctionHouse.queryFilter(settleAuctionFilter, fromBlock),
+            collateralAuctionHouse.queryFilter(startFilter, fromBlock, toBlock),
+            collateralAuctionHouse.queryFilter(buyCollateralFilter, fromBlock, toBlock),
+            collateralAuctionHouse.queryFilter(settleAuctionFilter, fromBlock, toBlock),
         ]).then(([startAuction, buyEvents, settleEvents]) => {
             const bids = buyEvents.reduce((accum: { [key: string]: IAuctionBidder[] }, bid) => {
                 const parsedBid = collateralBidEventToBid(bid)
