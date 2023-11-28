@@ -16,7 +16,7 @@ export async function fetchUserSafes(geb: Geb, userAddress: string): Promise<[Bi
         ['address', 'address', 'address', 'address', 'address'],
         [
             geb.contracts.systemCoin.address,
-            geb.contracts.proxyRegistry.address,
+            geb.contracts.proxyFactory.address,
             geb.contracts.safeEngine.address,
             geb.contracts.safeManager.address,
             userAddress,
