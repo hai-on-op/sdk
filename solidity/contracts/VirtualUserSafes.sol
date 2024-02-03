@@ -5,7 +5,7 @@ interface IERC20 {
     function balanceOf(address guy) external view returns (uint256);
 }
 
-interface IProxyRegistry {
+interface IProxyFactory {
     function proxies(address guy) external view returns (address);
 }
 
@@ -36,13 +36,13 @@ contract VirtualUserSafes {
 
     constructor(
         IERC20 coin,
-        IProxyRegistry proxyRegistry,
+        IProxyFactory proxyFactory,
         ISAFEEngine safeEngine,
         ISafeManager safeManager,
         address user
     ) {
         uint256 coinBalance = coin.balanceOf(user);
-        address userProxy = proxyRegistry.proxies(user);
+        address userProxy = proxyFactory.proxies(user);
 
         SafeData[] memory safesData;
 

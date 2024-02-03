@@ -111,7 +111,7 @@ export class Geb {
      * @param ownerAddress Externally owned user account aka Ethereum address that owns a GEB proxy.
      */
     public async getProxyAction(ownerAddress: string) {
-        const address = await this.contracts.proxyRegistry.proxies(ownerAddress)
+        const address = await this.contracts.proxyFactory.proxies(ownerAddress)
 
         if (address === NULL_ADDRESS) {
             throw new GebError(GebErrorTypes.DOES_NOT_OWN_HAVE_PROXY)
@@ -123,7 +123,7 @@ export class Geb {
      * Deploy a new proxy owned by the sender.
      */
     public async deployProxy() {
-        return await this.contracts.proxyRegistry['build()']()
+        return await this.contracts.proxyFactory['build()']()
     }
 
     /**
