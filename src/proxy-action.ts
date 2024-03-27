@@ -2,7 +2,7 @@ import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { ethers } from 'ethers'
 import { ContractList, GebDeployment, getAddressList } from './contracts'
 
-import { TokenList, getTokenList } from './contracts/addreses'
+import { TokenList, getTokenList } from './contracts/addresses'
 import * as types from './typechained'
 import { NULL_ADDRESS } from './utils'
 
@@ -277,6 +277,22 @@ export class BasicActions {
                 safe,
                 collateralAmount,
                 deltaWad
+            )
+        )
+    }
+
+    collectTokenCollateral(
+        collateralName: string,
+        safe: BigNumberish,
+        amt: BigNumberish
+    ): Promise<ethers.PopulatedTransaction> {
+        let collateralJoin = this.tokenList[collateralName].collateralJoin
+        return this.getProxiedTransactionRequest(
+            this.proxyActionCore.populateTransaction.collectTokenCollateral(
+                this.addressList.SAFE_MANAGER,
+                collateralJoin,
+                safe,
+                amt
             )
         )
     }

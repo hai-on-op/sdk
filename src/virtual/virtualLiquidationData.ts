@@ -1,7 +1,7 @@
 import { BigNumber, ethers } from 'ethers'
 import { Geb } from '../geb'
 import VirtualLiquidationData from '../artifacts/contracts/VirtualLiquidationData.sol/VirtualLiquidationData.json'
-import { TokenData } from '../contracts/addreses'
+import { TokenData } from '../contracts/addresses'
 
 interface LiquidationData {
     redemptionPrice: BigNumber

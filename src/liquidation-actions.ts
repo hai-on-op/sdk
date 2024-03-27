@@ -1,7 +1,7 @@
 import { BigNumberish } from '@ethersproject/bignumber'
 import { ethers } from 'ethers'
 import { ContractApis } from './api/contract-apis'
-import { TokenList } from './contracts/addreses'
+import { TokenList } from './contracts/addresses'
 import { GebDeployment } from './contracts/index'
 
 /**
