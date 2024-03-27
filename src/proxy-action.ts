@@ -2,7 +2,7 @@ import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { ethers } from 'ethers'
 import { ContractList, GebDeployment, getAddressList } from './contracts'
 
-import { TokenList, getTokenList } from './contracts/addreses'
+import { TokenList, getTokenList } from './contracts/addresses'
 import * as types from './typechained'
 import { NULL_ADDRESS } from './utils'
 

@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import * as types from '../typechained'
 import { GebDeployment, getAddressList } from '../contracts'
-import { getTokenList } from '../contracts/addreses'
+import { getTokenList } from '../contracts/addresses'
 
 // Container class used to instantiate most GEB contracts
 // prettier-ignore
