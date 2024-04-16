@@ -1,0 +1,243 @@
+{
+  "abi": [
+    {
+      "type": "function",
+      "name": "claim",
+      "inputs": [
+        { "name": "index", "type": "uint256", "internalType": "uint256" },
+        { "name": "account", "type": "address", "internalType": "address" },
+        { "name": "amount", "type": "uint256", "internalType": "uint256" },
+        { "name": "merkleProof", "type": "bytes32[]", "internalType": "bytes32[]" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "deploymentTime",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "isClaimed",
+      "inputs": [{ "name": "index", "type": "uint256", "internalType": "uint256" }],
+      "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "merkleRoot",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "bytes32", "internalType": "bytes32" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "owner",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "sendTokens",
+      "inputs": [
+        { "name": "dst", "type": "address", "internalType": "address" },
+        { "name": "tokenAmount", "type": "uint256", "internalType": "uint256" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "timelapseUntilWithdrawWindow",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "token",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "event",
+      "name": "AddAuthorization",
+      "inputs": [{ "name": "account", "type": "address", "indexed": false, "internalType": "address" }],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "Claimed",
+      "inputs": [
+        { "name": "index", "type": "uint256", "indexed": false, "internalType": "uint256" },
+        { "name": "account", "type": "address", "indexed": false, "internalType": "address" },
+        { "name": "amount", "type": "uint256", "indexed": false, "internalType": "uint256" }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "RemoveAuthorization",
+      "inputs": [{ "name": "account", "type": "address", "indexed": false, "internalType": "address" }],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "SendTokens",
+      "inputs": [
+        { "name": "dst", "type": "address", "indexed": false, "internalType": "address" },
+        { "name": "tokenAmount", "type": "uint256", "indexed": false, "internalType": "uint256" }
+      ],
+      "anonymous": false
+    }
+  ],
+  "bytecode": { "object": "0x", "sourceMap": "", "linkReferences": {} },
+  "deployedBytecode": { "object": "0x", "sourceMap": "", "linkReferences": {} },
+  "methodIdentifiers": {
+    "claim(uint256,address,uint256,bytes32[])": "2e7ba6ef",
+    "deploymentTime()": "ecda10f5",
+    "isClaimed(uint256)": "9e34070f",
+    "merkleRoot()": "2eb4a7ab",
+    "owner()": "8da5cb5b",
+    "sendTokens(address,uint256)": "05ab421d",
+    "timelapseUntilWithdrawWindow()": "93a10984",
+    "token()": "fc0c546a"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.6.7+commit.b8d736ae\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AddAuthorization\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Claimed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RemoveAuthorization\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"dst\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenAmount\",\"type\":\"uint256\"}],\"name\":\"SendTokens\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"merkleProof\",\"type\":\"bytes32[]\"}],\"name\":\"claim\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deploymentTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"isClaimed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"merkleRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"dst\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenAmount\",\"type\":\"uint256\"}],\"name\":\"sendTokens\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"timelapseUntilWithdrawWindow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"token\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IMerkleDistributor.sol\":\"IMerkleDistributor\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-auth/=lib/ds-token/lib/ds-stop/lib/ds-auth/src/\",\":ds-math/=lib/ds-token/lib/ds-math/src/\",\":ds-note/=lib/ds-token/lib/ds-stop/lib/ds-note/src/\",\":ds-stop/=lib/ds-token/lib/ds-stop/src/\",\":ds-test/=lib/ds-test/src/\",\":ds-token/=lib/ds-token/src/\",\":erc20/=lib/ds-token/lib/erc20/src/\"]},\"sources\":{\"src/interfaces/IMerkleDistributor.sol\":{\"keccak256\":\"0x4a1d4d671af1d1a2f9818df0352b08fab057e9e5569157fa7bc1e16254d9092e\",\"urls\":[\"bzz-raw://1599fd68fc1ea6add7300d98745b75f9f9c20bea75c2349ea5b99cef0134a007\",\"dweb:/ipfs/QmZgUHbgmyPuUPJHcCdeVEASQ6PV2d3uwwPy84dRQj1NRw\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": { "version": "0.6.7+commit.b8d736ae" },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [{ "internalType": "address", "name": "account", "type": "address", "indexed": false }],
+          "type": "event",
+          "name": "AddAuthorization",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "index", "type": "uint256", "indexed": false },
+            { "internalType": "address", "name": "account", "type": "address", "indexed": false },
+            { "internalType": "uint256", "name": "amount", "type": "uint256", "indexed": false }
+          ],
+          "type": "event",
+          "name": "Claimed",
+          "anonymous": false
+        },
+        {
+          "inputs": [{ "internalType": "address", "name": "account", "type": "address", "indexed": false }],
+          "type": "event",
+          "name": "RemoveAuthorization",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "dst", "type": "address", "indexed": false },
+            { "internalType": "uint256", "name": "tokenAmount", "type": "uint256", "indexed": false }
+          ],
+          "type": "event",
+          "name": "SendTokens",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "index", "type": "uint256" },
+            { "internalType": "address", "name": "account", "type": "address" },
+            { "internalType": "uint256", "name": "amount", "type": "uint256" },
+            { "internalType": "bytes32[]", "name": "merkleProof", "type": "bytes32[]" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "claim"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "deploymentTime",
+          "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }]
+        },
+        {
+          "inputs": [{ "internalType": "uint256", "name": "index", "type": "uint256" }],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "isClaimed",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "merkleRoot",
+          "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "owner",
+          "outputs": [{ "internalType": "address", "name": "", "type": "address" }]
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "dst", "type": "address" },
+            { "internalType": "uint256", "name": "tokenAmount", "type": "uint256" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "sendTokens"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "timelapseUntilWithdrawWindow",
+          "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "token",
+          "outputs": [{ "internalType": "address", "name": "", "type": "address" }]
+        }
+      ],
+      "devdoc": { "methods": {} },
+      "userdoc": { "methods": {} }
+    },
+    "settings": {
+      "remappings": [
+        "ds-auth/=lib/ds-token/lib/ds-stop/lib/ds-auth/src/",
+        "ds-math/=lib/ds-token/lib/ds-math/src/",
+        "ds-note/=lib/ds-token/lib/ds-stop/lib/ds-note/src/",
+        "ds-stop/=lib/ds-token/lib/ds-stop/src/",
+        "ds-test/=lib/ds-test/src/",
+        "ds-token/=lib/ds-token/src/",
+        "erc20/=lib/ds-token/lib/erc20/src/"
+      ],
+      "optimizer": { "enabled": true, "runs": 200 },
+      "metadata": { "bytecodeHash": "ipfs" },
+      "compilationTarget": { "src/interfaces/IMerkleDistributor.sol": "IMerkleDistributor" },
+      "evmVersion": "istanbul",
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/IMerkleDistributor.sol": {
+        "keccak256": "0x4a1d4d671af1d1a2f9818df0352b08fab057e9e5569157fa7bc1e16254d9092e",
+        "urls": [
+          "bzz-raw://1599fd68fc1ea6add7300d98745b75f9f9c20bea75c2349ea5b99cef0134a007",
+          "dweb:/ipfs/QmZgUHbgmyPuUPJHcCdeVEASQ6PV2d3uwwPy84dRQj1NRw"
+        ],
+        "license": null
+      }
+    },
+    "version": 1
+  },
+  "id": 10
+}

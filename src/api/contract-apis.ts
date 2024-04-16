@@ -24,6 +24,9 @@ export class ContractApis {
     public rateSetter: types.IPIDRateSetter
     public piCalculator: types.IPIDController
 
+    public merkleDistributorFactoryKite: types.MerkleDistributorFactory
+    public merkleDistributorFactoryOp: types.MerkleDistributorFactory
+
     public oracleJob: types.IOracleJob
     public accountingJob: types.IAccountingJob
     public liquidationJob: types.ILiquidationJob
@@ -60,6 +63,9 @@ export class ContractApis {
         this.rateSetter = types.IPIDRateSetter__factory.connect(addressList.GEB_RRFM_SETTER, signerOrProvider)
         this.piCalculator = types.IPIDController__factory.connect(addressList.GEB_RRFM_CALCULATOR, signerOrProvider)
         
+        this.merkleDistributorFactoryKite = types.MerkleDistributorFactory__factory.connect(addressList.MERKLE_DISTRIBUTOR_FACTORY_KITE, signerOrProvider)
+        this.merkleDistributorFactoryOp = types.MerkleDistributorFactory__factory.connect(addressList.MERKLE_DISTRIBUTOR_FACTORY_OP, signerOrProvider)
+
         this.oracleJob = types.IOracleJob__factory.connect(addressList.JOB_ORACLES, signerOrProvider)
         this.accountingJob = types.IAccountingJob__factory.connect(addressList.JOB_ACCOUNTING, signerOrProvider)
         this.liquidationJob = types.ILiquidationJob__factory.connect(addressList.JOB_LIQUIDATION, signerOrProvider)
