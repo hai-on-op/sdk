@@ -9,6 +9,7 @@ import { Safe } from './schema/safe'
 import { ERC20, ERC20__factory } from './typechained'
 import { NULL_ADDRESS } from './utils'
 import { LiquidationActions } from './liquidation-actions'
+import { MerkleDistributor } from './merkle-distributor'
 
 /**
  * The main package used to interact with the GEB system. Includes [[deployProxy |helper functions]] for safe
@@ -76,6 +77,7 @@ export class Geb {
     public tokenList: TokenList
     public auctions: Auctions
     public liquidations: LiquidationActions
+    public distributors: MerkleDistributor
     public provider: ethers.providers.Provider
     public signer?: ethers.Signer
     protected addresses: ContractList
@@ -103,6 +105,7 @@ export class Geb {
         this.contracts = new ContractApis(network, signerOrProvider)
         this.auctions = new Auctions(this.contracts)
         this.liquidations = new LiquidationActions(this.contracts, this.tokenList)
+        this.distributors = new MerkleDistributor(this.contracts, this.provider)
     }
 
     /**
