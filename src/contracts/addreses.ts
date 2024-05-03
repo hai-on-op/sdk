@@ -197,6 +197,15 @@ const tokens: Record<GebDeployment, TokenList> = {
             collateralAuctionHouse: '0x6b5c2deA8b9b13A043DDc25C6581cD6D87a2A881',
             isCollateral: true,
         },
+        SNX: {
+            address: '0x8700dAec35aF8Ff88c16BdF0418774CB3D7599B4',
+            decimals: 18,
+            symbol: 'SNX',
+            bytes32String: SNX,
+            collateralJoin: '0xa24b2dff829cf0e0a60216b814169b54114f3f37',
+            collateralAuctionHouse: '0x007e5f18697b937d26f7f2bffd44dd1b3e5c7300',
+            isCollateral: true,
+        },
         HAI: {
             address: '0x10398AbC267496E49106B07dd6BE13364D10dC71',
             decimals: 18,
@@ -235,7 +244,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             collateralAuctionHouse: '0xbD2a307BBbd07e9E83BAf61BbB7f88F27B227C8C',
             isCollateral: true,
         },
-        /* TODO: uncomment after SNX is deployed through governance
         SNX: {
             address: '0x2E5ED97596a8368EB9E44B1f3F25B2E813845303',
             decimals: 18,
@@ -245,7 +253,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             collateralAuctionHouse: '0x334fBD39f300c80cbe4ABA4B93a9C8eC895f4c35',
             isCollateral: true,
         },
-        */
         WBTC: {
             address: '0x72Bf28D2E3dfE44a7dD0BFE265fCc381fF8A74C8',
             decimals: 8,
