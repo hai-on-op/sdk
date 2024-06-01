@@ -200,7 +200,7 @@ const tokens: Record<GebDeployment, TokenList> = {
         WSTETH: {
             address: '0x1F32b1c2345538c0c6f582fCB022739c4A194Ebb',
             decimals: 18,
-            symbol: 'WSTETH',
+            symbol: 'wstETH',
             bytes32String: WSTETH,
             collateralJoin: '0x77a82b65F8FA7da357A047B897C0339bD0B0B361',
             collateralAuctionHouse: '0x375686A4cD77DD8e86dD06353E0b42bC53cB3704',
@@ -235,17 +235,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
         },
         */
-        /* TODO: uncomment if / after RETH is deployed through governance
+        /* TODO: uncomment if / after RETH is deployed through governance */
         RETH: {
             address: '0x9Bcef72be871e61ED4fBbc7630889beE758eb81D',
             decimals: 18,
-            symbol: '',
+            symbol: 'rETH',
             bytes32String: RETH,
             collateralJoin: '0x8facb2fc0a6bc9b82a17c5f4092fadbc415b8ffa',
             collateralAuctionHouse: '0xf8c655ed6475beffbd2964efec592bbd21757804',
             isCollateral: true,
         },
-        */
+        /**/
         /* TODO: uncomment if / after LUSD-A is deployed through governance
         'LUSD-A': {
             address: '0xc40F949F8a4e094D1b49a23ea9241D289B7b2819',
