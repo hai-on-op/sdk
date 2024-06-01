@@ -1,4 +1,22 @@
-import { WETH, WSTETH, OP, SNX, WBTC, STONES, TOTEM } from '../utils'
+import {
+    WETH,
+    WSTETH,
+    OP,
+    SNX,
+    WBTC,
+    RETH,
+    LUSD_A,
+    SUSD_A,
+    LINK,
+    LDO,
+    UNI,
+    VELO,
+    FRXETH,
+    SFRXETH,
+    PENDLE,
+    STONES,
+    TOTEM,
+} from '../utils'
 
 // All keys are mandatory
 export type ContractKey =
@@ -206,6 +224,128 @@ const tokens: Record<GebDeployment, TokenList> = {
             collateralAuctionHouse: '0x007e5f18697b937d26f7f2bffd44dd1b3e5c7300',
             isCollateral: true,
         },
+        /* TODO: uncomment if / after WBTC is deployed through governance
+        WBTC: {
+            address: '0x68f180fcCe6836688e9084f035309E29Bf0A2095',
+            decimals: 8,
+            symbol: 'WBTC',
+            bytes32String: WBTC,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after RETH is deployed through governance
+        RETH: {
+            address: '0x9Bcef72be871e61ED4fBbc7630889beE758eb81D',
+            decimals: 18,
+            symbol: '',
+            bytes32String: RETH,
+            collateralJoin: '0x8facb2fc0a6bc9b82a17c5f4092fadbc415b8ffa',
+            collateralAuctionHouse: '0xf8c655ed6475beffbd2964efec592bbd21757804',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after LUSD-A is deployed through governance
+        'LUSD-A': {
+            address: '0xc40F949F8a4e094D1b49a23ea9241D289B7b2819',
+            decimals: 18,
+            symbol: 'LUSD-A',
+            bytes32String: LUSD_A,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after SUSD-A is deployed through governance
+        'SUSD-A': {
+            address: '0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9',
+            decimals: 18,
+            symbol: 'SUSD-A',
+            bytes32String: SUSD_A,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after LINK is deployed through governance
+        LINK: {
+            address: '0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6',
+            decimals: 18,
+            symbol: 'LINK',
+            bytes32String: LINK,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after LDO is deployed through governance
+        LDO: {
+            address: '0xFdb794692724153d1488CcdBE0C56c252596735F',
+            decimals: 18,
+            symbol: 'LDO',
+            bytes32String: LDO,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after UNI is deployed through governance
+        UNI: {
+            address: '0x6fd9d7AD17242c41f7131d257212c54A0e816691',
+            decimals: 18,
+            symbol: 'UNI',
+            bytes32String: UNI,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after VELO is deployed through governance
+        VELO: {
+            address: '0x3c8B650257cFb5f272f799F5e2b4e65093a11a05', // Velodrome
+            address: '0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db', // VelodromeV2
+            decimals: 18,
+            symbol: 'VELO',
+            bytes32String: VELO,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after frxETH is deployed through governance
+        FRXETH: {
+            address: '0x6806411765Af15Bddd26f8f544A34cC40cb9838B',
+            decimals: 18,
+            symbol: 'frxETH',
+            bytes32String: FRXETH,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after sfrxETH is deployed through governance
+        SFRXETH: {
+            address: '0x484c2D6e3cDd945a8B2DF735e079178C1036578c',
+            decimals: 18,
+            symbol: 'sfrxETH',
+            bytes32String: SFRXETH,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
+        /* TODO: uncomment if / after PENDLE is deployed through governance
+        PENDLE: {
+            address: '0xBC7B1Ff1c6989f006a1185318eD4E7b5796e66E1',
+            decimals: 18,
+            symbol: 'PENDLE',
+            bytes32String: PENDLE,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: true,
+        },
+        */
         HAI: {
             address: '0x10398AbC267496E49106B07dd6BE13364D10dC71',
             decimals: 18,
