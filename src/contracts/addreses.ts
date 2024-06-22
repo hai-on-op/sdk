@@ -247,7 +247,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             hasRewards: false,
         },
         */
-        /* TODO: uncomment if / after RETH is deployed through governance */
         RETH: {
             address: '0x9Bcef72be871e61ED4fBbc7630889beE758eb81D',
             decimals: 18,
@@ -259,20 +258,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
             hasRewards: false,
         },
-        /**/
-        /* TODO: uncomment if / after LUSD-A is deployed through governance
         'LUSD-A': {
             address: '0xc40F949F8a4e094D1b49a23ea9241D289B7b2819',
             decimals: 18,
             symbol: 'LUSD-A',
             label: 'LUSD-A',
             bytes32String: LUSD_A,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
+            collateralJoin: '0x0eA91e64d631E414b613b2198D51CE84223911D5',
+            collateralAuctionHouse: '0x5722aA89a0F2B6AA1fBB6BB05751151a0bd321AA',
             isCollateral: true,
             hasRewards: false,
         },
-        */
         /* TODO: uncomment if / after SUSD-A is deployed through governance
         'SUSD-A': {
             address: '0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9',
