@@ -282,19 +282,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             hasRewards: false,
         },
         */
-        /* TODO: uncomment if / after LINK is deployed through governance
         LINK: {
             address: '0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6',
             decimals: 18,
             symbol: 'LINK',
             label: 'LINK',
             bytes32String: LINK,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
+            collateralJoin: '0xea284065E12eFFA66B0042286AD022c7e7935018',
+            collateralAuctionHouse: '0x92fC0Ed7fE8bFE8d32462dF3106326920a6ca149',
             isCollateral: true,
             hasRewards: false,
         },
-        */
         /* TODO: uncomment if / after LDO is deployed through governance
         LDO: {
             address: '0xFdb794692724153d1488CcdBE0C56c252596735F',
