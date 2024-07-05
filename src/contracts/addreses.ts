@@ -4,6 +4,7 @@ import {
     OP,
     SNX,
     WBTC,
+    TBTC,
     RETH,
     LUSD_A,
     SUSD_A,
@@ -247,6 +248,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             hasRewards: false,
         },
         */
+        TBTC: {
+            address: '0x6c84a8f1c29108F47a79964b5Fe888D4f4D0dE40',
+            decimals: 18,
+            symbol: 'TBTC',
+            label: 'TBTC',
+            bytes32String: TBTC,
+            collateralJoin: '0x99E2b46c584382D9668a1DBc64A9a23D2828F74B',
+            collateralAuctionHouse: '0xed335cD79C6eCa0522F661eBb81cE22DC3E395d4',
+            isCollateral: true,
+            hasRewards: false,
+        },
         RETH: {
             address: '0x9Bcef72be871e61ED4fBbc7630889beE758eb81D',
             decimals: 18,
