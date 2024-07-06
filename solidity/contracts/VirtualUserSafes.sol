@@ -25,6 +25,8 @@ interface ISAFEEngine {
     function tokenCollateral(bytes32 collateralType, address safe) external view returns (uint256 collateralBalance);
 }
 
+function tokenCollateral(bytes32 collateralType, address safe) external view returns (uint256 collateralBalance);
+
 contract VirtualUserSafes {
     struct SafeData {
         address addy;
