@@ -6,6 +6,7 @@ interface SafeData {
     addy: string
     id: BigNumber
     lockedCollateral: BigNumber
+    freeCollateral: BigNumber
     generatedDebt: BigNumber
     collateralType: string
 }
@@ -36,6 +37,7 @@ export async function fetchUserSafes(geb: Geb, userAddress: string): Promise<[Bi
                 address addy, 
                 uint256 id, 
                 uint256 lockedCollateral, 
+                uint256 freeCollateral,
                 uint256 generatedDebt, 
                 bytes32 collateralType
                 )[]`,
