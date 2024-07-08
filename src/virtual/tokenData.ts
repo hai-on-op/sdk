@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import { Geb } from '../geb'
 import TokensData from '../artifacts/contracts/TokensData.sol/TokensData.json'
-import { TokenData } from '../contracts/addreses'
+import { TokenData } from '../contracts/addresses'
 
 export interface TokenFetchData {
     balanceE18: string

@@ -10,10 +10,9 @@ interface IProxyFactory {
 }
 
 interface ISafeManager {
-    function getSafesData(address guy)
-        external
-        view
-        returns (uint256[] memory ids, address[] memory safes, bytes32[] memory collateralTypes);
+    function getSafesData(
+        address guy
+    ) external view returns (uint256[] memory ids, address[] memory safes, bytes32[] memory collateralTypes);
 }
 
 interface ISAFEEngine {
@@ -23,6 +22,7 @@ interface ISAFEEngine {
     }
 
     function safes(bytes32 collateralType, address safe) external view returns (SafeDeposit memory _safe);
+    function tokenCollateral(bytes32 collateralType, address safe) external view returns (uint256 collateralBalance);
 }
 
 contract VirtualUserSafes {
@@ -30,6 +30,7 @@ contract VirtualUserSafes {
         address addy;
         uint256 id;
         uint256 lockedCollateral;
+        uint256 freeCollateral;
         uint256 generatedDebt;
         bytes32 collateralType;
     }
@@ -49,13 +50,22 @@ contract VirtualUserSafes {
         if (userProxy == address(0)) {
             safesData = new SafeData[](0);
         } else {
-            (uint256[] memory ids, address[] memory safes, bytes32[] memory _cTypes) =
-                safeManager.getSafesData(userProxy);
+            (uint256[] memory ids, address[] memory safes, bytes32[] memory _cTypes) = safeManager.getSafesData(
+                userProxy
+            );
 
             safesData = new SafeData[](safes.length);
             for (uint256 i = 0; i < safes.length; i++) {
                 ISAFEEngine.SafeDeposit memory _safeData = safeEngine.safes(_cTypes[i], safes[i]);
-                safesData[i] = SafeData(safes[i], ids[i], _safeData.lockedCollateral, _safeData.generatedDebt, _cTypes[i]);
+                uint256 freeCollateral = safeEngine.tokenCollateral(_cTypes[i], safes[i]);
+                safesData[i] = SafeData(
+                    safes[i],
+                    ids[i],
+                    _safeData.lockedCollateral,
+                    freeCollateral,
+                    _safeData.generatedDebt,
+                    _cTypes[i]
+                );
             }
         }
 

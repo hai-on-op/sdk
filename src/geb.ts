@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import { ContractApis } from './api/contract-apis'
 import { Auctions } from './auctions'
-import { TokenList, getTokenList } from './contracts/addreses'
+import { TokenList, getTokenList } from './contracts/addresses'
 import { ContractList, GebDeployment, getAddressList } from './contracts/index'
 import { GebError, GebErrorTypes } from './errors'
 import { BasicActions } from './proxy-action'
