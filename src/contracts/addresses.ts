@@ -331,20 +331,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             hasRewards: false,
         },
         */
-        /* TODO: uncomment if / after VELO is deployed through governance
         VELO: {
-            address: '0x3c8B650257cFb5f272f799F5e2b4e65093a11a05', // Velodrome
             address: '0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db', // VelodromeV2
             decimals: 18,
             symbol: 'VELO',
             label: 'VELO',
             bytes32String: VELO,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
+            collateralJoin: '0x2db7594f644A92ded09F21Fe8f93376c03C9a9d5',
+            collateralAuctionHouse: '0x65e2cCd69B4bd18C57369b2048F2B02b9b0f7d53',
             isCollateral: true,
             hasRewards: false,
         },
-        */
         /* TODO: uncomment if / after frxETH is deployed through governance
         FRXETH: {
             address: '0x6806411765Af15Bddd26f8f544A34cC40cb9838B',
