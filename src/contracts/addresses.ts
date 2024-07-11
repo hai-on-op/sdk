@@ -556,7 +556,7 @@ const tokens: Record<GebDeployment, TokenList> = {
             symbol: 'HAI',
             label: 'HAI',
             bytes32String: '',
-            collateralJoin: '',
+            collateralJoin: '0xbd68d4fc30ee2a071f85186b5240c80bce8bc50b',
             collateralAuctionHouse: '',
             isCollateral: false,
             hasRewards: false,
