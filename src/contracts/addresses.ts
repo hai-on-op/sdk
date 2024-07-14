@@ -235,19 +235,18 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
             hasRewards: false,
         },
-        /* TODO: uncomment if / after WBTC is deployed through governance
+
         WBTC: {
             address: '0x68f180fcCe6836688e9084f035309E29Bf0A2095',
             decimals: 8,
             symbol: 'WBTC',
             label: 'WBTC',
             bytes32String: WBTC,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
+            collateralJoin: '0x0b080B74cC9d3416b471FD0b01988139256a65e4',
+            collateralAuctionHouse: '0x783cfB5faBfbe7E827b8dBb629bfBB73779217c8',
             isCollateral: true,
             hasRewards: false,
         },
-        */
         TBTC: {
             address: '0x6c84a8f1c29108F47a79964b5Fe888D4f4D0dE40',
             decimals: 18,
