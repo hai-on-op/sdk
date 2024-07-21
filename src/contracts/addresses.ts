@@ -343,7 +343,7 @@ const tokens: Record<GebDeployment, TokenList> = {
             hasRewards: false,
         },
         APXETH: {
-            address: '0x16Ed8E219cde31E14a80dCb6C9127A5EC6e88e46', // VelodromeV2
+            address: '0x16Ed8E219cde31E14a80dCb6C9127A5EC6e88e46',
             decimals: 18,
             symbol: 'APXETH',
             label: 'APXETH',
