@@ -17,6 +17,7 @@ import {
     PENDLE,
     STONES,
     TOTEM,
+    APXETH,
 } from '../utils'
 
 // All keys are mandatory
@@ -338,6 +339,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             bytes32String: VELO,
             collateralJoin: '0x2db7594f644A92ded09F21Fe8f93376c03C9a9d5',
             collateralAuctionHouse: '0x65e2cCd69B4bd18C57369b2048F2B02b9b0f7d53',
+            isCollateral: true,
+            hasRewards: false,
+        },
+        APXETH: {
+            address: '0x16Ed8E219cde31E14a80dCb6C9127A5EC6e88e46',
+            decimals: 18,
+            symbol: 'APXETH',
+            label: 'APXETH',
+            bytes32String: APXETH,
+            collateralJoin: '0x1839F5C0EFB25203af719B685E47dAb1A2Cad742',
+            collateralAuctionHouse: '0xCe2F288305d204B539Cb2637a055488a4E284b90',
             isCollateral: true,
             hasRewards: false,
         },
