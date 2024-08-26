@@ -18,6 +18,7 @@ import {
     STONES,
     TOTEM,
     APXETH,
+    MOO_VELO_V2_OP_VELO,
 } from '../utils'
 
 // All keys are mandatory
@@ -350,6 +351,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             bytes32String: APXETH,
             collateralJoin: '0x1839F5C0EFB25203af719B685E47dAb1A2Cad742',
             collateralAuctionHouse: '0xCe2F288305d204B539Cb2637a055488a4E284b90',
+            isCollateral: true,
+            hasRewards: false,
+        },
+        'MOO-VELO-V2-OP-VELO': {
+            address: '0x04c4a21D7439eD05fd33469565541bF6464F7157',
+            decimals: 18,
+            symbol: 'MOO-VELO-V2-OP-VELO',
+            label: 'MOO-VELO-V2-OP-VELO',
+            bytes32String: MOO_VELO_V2_OP_VELO,
+            collateralJoin: '0x6207a306f34e1a9e6eda65ecc3d4e27d76593e4b',
+            collateralAuctionHouse: '0xc362e012733FcFf9b83c02Ef12B9156472e007C7',
             isCollateral: true,
             hasRewards: false,
         },
