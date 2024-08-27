@@ -358,7 +358,7 @@ const tokens: Record<GebDeployment, TokenList> = {
             address: '0x04c4a21D7439eD05fd33469565541bF6464F7157',
             decimals: 18,
             symbol: 'MOO-VELO-V2-OP-VELO',
-            label: 'MOO-VELO-V2-OP-VELO',
+            label: 'Moo VeloV2 OP-VELO',
             bytes32String: MOO_VELO_V2_OP_VELO,
             collateralJoin: '0x6207a306f34e1a9e6eda65ecc3d4e27d76593e4b',
             collateralAuctionHouse: '0xc362e012733FcFf9b83c02Ef12B9156472e007C7',
