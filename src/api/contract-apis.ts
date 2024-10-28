@@ -26,6 +26,7 @@ export class ContractApis {
 
     public merkleDistributorFactoryKite: types.MerkleDistributorFactory
     public merkleDistributorFactoryOp: types.MerkleDistributorFactory
+    public merkleDistributorFactoryDinero: types.MerkleDistributorFactory
 
     public oracleJob: types.IOracleJob
     public accountingJob: types.IAccountingJob
@@ -65,6 +66,7 @@ export class ContractApis {
         
         this.merkleDistributorFactoryKite = types.MerkleDistributorFactory__factory.connect(addressList.MERKLE_DISTRIBUTOR_FACTORY_KITE, signerOrProvider)
         this.merkleDistributorFactoryOp = types.MerkleDistributorFactory__factory.connect(addressList.MERKLE_DISTRIBUTOR_FACTORY_OP, signerOrProvider)
+        this.merkleDistributorFactoryDinero = types.MerkleDistributorFactory__factory.connect(addressList.MERKLE_DISTRIBUTOR_FACTORY_DINERO, signerOrProvider)
 
         this.oracleJob = types.IOracleJob__factory.connect(addressList.JOB_ORACLES, signerOrProvider)
         this.accountingJob = types.IAccountingJob__factory.connect(addressList.JOB_ACCOUNTING, signerOrProvider)
