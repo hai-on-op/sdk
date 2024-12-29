@@ -21,7 +21,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "@hai-on-op/abis": "0.0.0-785e0b4c",
+    "@hai-on-op/abis": "1.0.7",
     "ethers": "5.4.7"
   },
   "devDependencies": {

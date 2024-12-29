@@ -828,10 +828,10 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@hai-on-op/abis@0.0.0-785e0b4c":
-  version "0.0.0-785e0b4c"
-  resolved "https://registry.yarnpkg.com/@hai-on-op/abis/-/abis-0.0.0-785e0b4c.tgz#4cf67055c6237a41c0eb04e4a9fd804a3d2251df"
-  integrity sha512-CO4jbahHz/AXo2v84UPN/qoXNLlqly5kbJ+nHP27Mw/2jAg5Tky20TmJk93EuMAWdH3wZgKi2uxP9hDH+kKPpw==
+"@hai-on-op/abis@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@hai-on-op/abis/-/abis-1.0.7.tgz#ec7b50ae8d20f0457f963f18a33f338c7ec675e1"
+  integrity sha512-9KDSTiNixQxi5srn5+t0kGckyL1HbZ6ronu+ZnBV7WS10pSxhj8j4O5u9CMQKAxySSWU+oZo/89F8JSCKwg3Kw==
   dependencies:
     "@defi-wonderland/solidity-utils" "0.0.0-4298c6c6"
     "@ethersproject/abi" "5.7.0"
@@ -1456,7 +1456,6 @@ dot-prop@^5.1.0:
 
 "ds-test@git+https://github.com/dapphub/ds-test.git#e282159d5170298eb2455a6c05280ab5a73a4ef0":
   version "1.0.0"
-  uid e282159d5170298eb2455a6c05280ab5a73a4ef0
   resolved "git+https://github.com/dapphub/ds-test.git#e282159d5170298eb2455a6c05280ab5a73a4ef0"
 
 "ds-test@https://github.com/dapphub/ds-test":
