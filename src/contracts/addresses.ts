@@ -12,6 +12,7 @@ import {
     LDO,
     UNI,
     VELO,
+    HAIVELO,
     FRXETH,
     SFRXETH,
     PENDLE,
@@ -55,6 +56,7 @@ export type ContractKey =
     | 'JOB_ACCOUNTING'
     | 'JOB_LIQUIDATION'
     | 'JOB_ORACLES'
+    | 'WRAPPED_TOKEN_HAI_VELO'
     | 'MERKLE_DISTRIBUTOR_FACTORY_KITE'
     | 'MERKLE_DISTRIBUTOR_FACTORY_OP'
     | 'MERKLE_DISTRIBUTOR_FACTORY_DINERO'
@@ -99,6 +101,7 @@ const addresses: Record<GebDeployment, ContractList> = {
         JOB_ACCOUNTING: '0xc256C3aa404Ab74cE050Bcf8A05256B6A1729EF0',
         JOB_LIQUIDATION: '0x5EF15750b5672CD6217E4E184cEAD440cB1b3638',
         JOB_ORACLES: '0xF4F18205D8D46638489865e42c0a71a3d4F9FC22',
+        WRAPPED_TOKEN_HAI_VELO: '0x1C0541cB726007c3eB917bA4a9e84BFFBA511c3c',
         MERKLE_DISTRIBUTOR_FACTORY_KITE: '0x3975Ff822aF38552fAC62A975D4D4e0Ea5Ac5980',
         MERKLE_DISTRIBUTOR_FACTORY_OP: '0x524fE171e80173C15381bB50034033dA282abCc6',
         MERKLE_DISTRIBUTOR_FACTORY_DINERO: '0xFC4fD07b8CbA6b008952656a3d16A25da012EA56',
@@ -136,6 +139,7 @@ const addresses: Record<GebDeployment, ContractList> = {
         JOB_ACCOUNTING: '0xCeCc0253fA03786031A4df8DB940728543D01Fb6',
         JOB_LIQUIDATION: '0x1Bea51CDcc5E5713A7b5eca4F1B27D90b3F0ddB5',
         JOB_ORACLES: '0x1F517889F899A3792c4ED0D6Ae8f1A69e89E3d40',
+        WRAPPED_TOKEN_HAI_VELO: '0x1C0541cB726007c3eB917bA4a9e84BFFBA511c3c',
         MERKLE_DISTRIBUTOR_FACTORY_KITE: '0x3975Ff822aF38552fAC62A975D4D4e0Ea5Ac5980',
         MERKLE_DISTRIBUTOR_FACTORY_OP: '0x524fE171e80173C15381bB50034033dA282abCc6',
         MERKLE_DISTRIBUTOR_FACTORY_DINERO: '0xFC4fD07b8CbA6b008952656a3d16A25da012EA56',
@@ -173,6 +177,7 @@ const addresses: Record<GebDeployment, ContractList> = {
         JOB_ACCOUNTING: '0x4fcd90ee6a041c631b6b93a52b4d94e0cedcb1ad',
         JOB_LIQUIDATION: '0x50d758e014c972e73166ea87a6a7d96868bf2859',
         JOB_ORACLES: '0xaacc036c505370918e4a89567a636d561833bd21',
+        WRAPPED_TOKEN_HAI_VELO: '0x1C0541cB726007c3eB917bA4a9e84BFFBA511c3c',
         MERKLE_DISTRIBUTOR_FACTORY_KITE: '0x3975Ff822aF38552fAC62A975D4D4e0Ea5Ac5980',
         MERKLE_DISTRIBUTOR_FACTORY_OP: '0x524fE171e80173C15381bB50034033dA282abCc6',
         MERKLE_DISTRIBUTOR_FACTORY_DINERO: '0xFC4fD07b8CbA6b008952656a3d16A25da012EA56',
@@ -594,6 +599,28 @@ const tokens: Record<GebDeployment, TokenList> = {
             symbol: 'KITE',
             label: 'KITE',
             bytes32String: '',
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: false,
+            hasRewards: false,
+        },
+        VELO: {
+            address: '0x1be428e1265d28194b44ac28d5728a1cf81c3469',
+            decimals: 18,
+            symbol: 'VELO',
+            label: 'VELO',
+            bytes32String: VELO,
+            collateralJoin: '',
+            collateralAuctionHouse: '',
+            isCollateral: false,
+            hasRewards: false,
+        },
+        HAIVELO: {
+            address: '0x1c0541cb726007c3eb917ba4a9e84bffba511c3c',
+            decimals: 18,
+            symbol: 'HAIVELO',
+            label: 'HAIVELO',
+            bytes32String: HAIVELO,
             collateralJoin: '',
             collateralAuctionHouse: '',
             isCollateral: false,
