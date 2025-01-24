@@ -1,6 +1,6 @@
 {
   "name": "@hai-on-op/sdk",
-  "version": "1.2.20",
+  "version": "1.2.21",
   "description": "Javascript client for HAI",
   "license": "MIT",
   "main": "lib",
