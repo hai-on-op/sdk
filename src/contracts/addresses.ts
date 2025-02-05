@@ -361,7 +361,7 @@ const tokens: Record<GebDeployment, TokenList> = {
             collateralJoin: '0x37025BD67847a286Eb3F5860B0f78929e6ad6D03',
             collateralAuctionHouse: '0x1D2b53cde55bC4a90f14cF6d94ecd810d6945752',
             isCollateral: true,
-            hasRewards: false,
+            hasRewards: true,
         },
         APXETH: {
             address: '0x16Ed8E219cde31E14a80dCb6C9127A5EC6e88e46',
@@ -635,7 +635,7 @@ const tokens: Record<GebDeployment, TokenList> = {
             collateralJoin: '',
             collateralAuctionHouse: '',
             isCollateral: false,
-            hasRewards: true,
+            hasRewards: false,
         },
     },
 }
