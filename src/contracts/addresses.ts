@@ -635,7 +635,7 @@ const tokens: Record<GebDeployment, TokenList> = {
             collateralJoin: '',
             collateralAuctionHouse: '',
             isCollateral: false,
-            hasRewards: false,
+            hasRewards: true,
         },
     },
 }
