@@ -314,17 +314,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
             hasRewards: false,
         },
-        SNX: {
-            address: '0x2E5ED97596a8368EB9E44B1f3F25B2E813845303',
-            decimals: 18,
-            symbol: 'SNX',
-            label: 'SNX',
-            bytes32String: SNX,
-            collateralJoin: '0x1e4Cc1F2250376b5ECe0093da530aee30a40dc8D',
-            collateralAuctionHouse: '0x334fBD39f300c80cbe4ABA4B93a9C8eC895f4c35',
-            isCollateral: true,
-            hasRewards: false,
-        },
         WBTC: {
             address: '0x72Bf28D2E3dfE44a7dD0BFE265fCc381fF8A74C8',
             decimals: 8,
