@@ -1,26 +1,4 @@
-import {
-    WETH,
-    WSTETH,
-    OP,
-    SNX,
-    WBTC,
-    TBTC,
-    RETH,
-    LUSD_A,
-    SUSD_A,
-    LINK,
-    LDO,
-    UNI,
-    VELO,
-    HAIVELO,
-    FRXETH,
-    SFRXETH,
-    PENDLE,
-    STONES,
-    TOTEM,
-    APXETH,
-    MOO_VELO_V2_OP_VELO,
-} from '../utils'
+import { WETH, WSTETH, OP, WBTC, TBTC, RETH, VELO, HAIVELO, STONES, TOTEM, APXETH } from '../utils'
 
 // All keys are mandatory
 export type ContractKey =
@@ -235,29 +213,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
             hasRewards: true,
         },
-        SNX: {
-            address: '0x8700dAec35aF8Ff88c16BdF0418774CB3D7599B4',
-            decimals: 18,
-            symbol: 'SNX',
-            label: 'SNX',
-            bytes32String: SNX,
-            collateralJoin: '0xa24b2dff829cf0e0a60216b814169b54114f3f37',
-            collateralAuctionHouse: '0x007e5f18697b937d26f7f2bffd44dd1b3e5c7300',
-            isCollateral: true,
-            hasRewards: false,
-        },
-
-        WBTC: {
-            address: '0x68f180fcCe6836688e9084f035309E29Bf0A2095',
-            decimals: 8,
-            symbol: 'WBTC',
-            label: 'WBTC',
-            bytes32String: WBTC,
-            collateralJoin: '0x0b080B74cC9d3416b471FD0b01988139256a65e4',
-            collateralAuctionHouse: '0x783cfB5faBfbe7E827b8dBb629bfBB73779217c8',
-            isCollateral: true,
-            hasRewards: false,
-        },
         TBTC: {
             address: '0x6c84a8f1c29108F47a79964b5Fe888D4f4D0dE40',
             decimals: 18,
@@ -280,67 +235,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
             hasRewards: false,
         },
-        'LUSD-A': {
-            address: '0xc40F949F8a4e094D1b49a23ea9241D289B7b2819',
-            decimals: 18,
-            symbol: 'LUSD-A',
-            label: 'LUSD-A',
-            bytes32String: LUSD_A,
-            collateralJoin: '0x0eA91e64d631E414b613b2198D51CE84223911D5',
-            collateralAuctionHouse: '0x5722aA89a0F2B6AA1fBB6BB05751151a0bd321AA',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        /* TODO: uncomment if / after SUSD-A is deployed through governance
-        'SUSD-A': {
-            address: '0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9',
-            decimals: 18,
-            symbol: 'SUSD-A',
-            label: 'SUSD-A',
-            bytes32String: SUSD_A,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        */
-        LINK: {
-            address: '0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6',
-            decimals: 18,
-            symbol: 'LINK',
-            label: 'LINK',
-            bytes32String: LINK,
-            collateralJoin: '0xea284065E12eFFA66B0042286AD022c7e7935018',
-            collateralAuctionHouse: '0x92fC0Ed7fE8bFE8d32462dF3106326920a6ca149',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        /* TODO: uncomment if / after LDO is deployed through governance
-        LDO: {
-            address: '0xFdb794692724153d1488CcdBE0C56c252596735F',
-            decimals: 18,
-            symbol: 'LDO',
-            label: 'LDO',
-            bytes32String: LDO,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        */
-        /* TODO: uncomment if / after UNI is deployed through governance
-        UNI: {
-            address: '0x6fd9d7AD17242c41f7131d257212c54A0e816691',
-            decimals: 18,
-            symbol: 'UNI',
-            label: 'UNI',
-            bytes32String: UNI,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        */
         VELO: {
             address: '0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db', // VelodromeV2
             decimals: 18,
@@ -374,56 +268,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
             hasRewards: false,
         },
-        'MOO-VELO-V2-OP-VELO': {
-            address: '0x04c4a21D7439eD05fd33469565541bF6464F7157',
-            decimals: 18,
-            symbol: 'MOO-VELO-V2-OP-VELO',
-            label: 'Moo VeloV2 OP-VELO',
-            bytes32String: MOO_VELO_V2_OP_VELO,
-            collateralJoin: '0x6207a306f34e1a9e6eda65ecc3d4e27d76593e4b',
-            collateralAuctionHouse: '0xc362e012733FcFf9b83c02Ef12B9156472e007C7',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        /* TODO: uncomment if / after frxETH is deployed through governance
-        FRXETH: {
-            address: '0x6806411765Af15Bddd26f8f544A34cC40cb9838B',
-            decimals: 18,
-            symbol: 'FRXETH',
-            label: 'frxETH',
-            bytes32String: FRXETH,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        */
-        /* TODO: uncomment if / after sfrxETH is deployed through governance
-        SFRXETH: {
-            address: '0x484c2D6e3cDd945a8B2DF735e079178C1036578c',
-            decimals: 18,
-            symbol: 'SFRXETH',
-            label: 'sfrxETH',
-            bytes32String: SFRXETH,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        */
-        /* TODO: uncomment if / after PENDLE is deployed through governance
-        PENDLE: {
-            address: '0xBC7B1Ff1c6989f006a1185318eD4E7b5796e66E1',
-            decimals: 18,
-            symbol: 'PENDLE',
-            label: 'PENDLE',
-            bytes32String: PENDLE,
-            collateralJoin: '',
-            collateralAuctionHouse: '',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        */
         HAI: {
             address: '0x10398AbC267496E49106B07dd6BE13364D10dC71',
             decimals: 18,
@@ -467,17 +311,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             bytes32String: OP,
             collateralJoin: '0xD11e8a5eB973E3b4b613171b5745261fcF83ec7B',
             collateralAuctionHouse: '0xbD2a307BBbd07e9E83BAf61BbB7f88F27B227C8C',
-            isCollateral: true,
-            hasRewards: false,
-        },
-        SNX: {
-            address: '0x2E5ED97596a8368EB9E44B1f3F25B2E813845303',
-            decimals: 18,
-            symbol: 'SNX',
-            label: 'SNX',
-            bytes32String: SNX,
-            collateralJoin: '0x1e4Cc1F2250376b5ECe0093da530aee30a40dc8D',
-            collateralAuctionHouse: '0x334fBD39f300c80cbe4ABA4B93a9C8eC895f4c35',
             isCollateral: true,
             hasRewards: false,
         },
