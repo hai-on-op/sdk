@@ -13,6 +13,7 @@ import {
     STONES,
     TOTEM,
     APXETH,
+    ALETH,
     MOO_VELO_V2_OP_VELO,
 } from '../utils'
 
@@ -337,6 +338,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             bytes32String: APXETH,
             collateralJoin: '0x1839F5C0EFB25203af719B685E47dAb1A2Cad742',
             collateralAuctionHouse: '0xCe2F288305d204B539Cb2637a055488a4E284b90',
+            isCollateral: true,
+            hasRewards: false,
+        },
+        ALETH: {
+            address: '0x3E29D3A9316dAB217754d13b28646B76607c5f04',
+            decimals: 18,
+            symbol: 'ALETH',
+            label: 'ALETH',
+            bytes32String: ALETH,
+            collateralJoin: '0x338988367a3684b6B0380Ea1490D316c3A622136',
+            collateralAuctionHouse: '0x2a60D97A815Eb59e2d5a216098138b698D31fCc2',
             isCollateral: true,
             hasRewards: false,
         },
