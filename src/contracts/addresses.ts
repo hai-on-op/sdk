@@ -14,6 +14,7 @@ import {
     TOTEM,
     APXETH,
     ALETH,
+    YV_VELO_ALETH_WETH,
     MOO_VELO_V2_OP_VELO,
 } from '../utils'
 
@@ -349,6 +350,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             bytes32String: ALETH,
             collateralJoin: '0x338988367a3684b6B0380Ea1490D316c3A622136',
             collateralAuctionHouse: '0x2a60D97A815Eb59e2d5a216098138b698D31fCc2',
+            isCollateral: true,
+            hasRewards: false,
+        },
+        'YV-VELO-ALETH-WETH': {
+            address: '0xf7D66b41Cd4241eae450fd9D2d6995754634D9f3',
+            decimals: 18,
+            symbol: 'YV-VELO-ALETH-WETH',
+            label: 'YV-VELO-ALETH-WETH',
+            bytes32String: YV_VELO_ALETH_WETH,
+            collateralJoin: '0x1cbac5ea7d32e8beda702c0071f5d93cd1318149',
+            collateralAuctionHouse: '0x94dbe090f4caac23136a83bcd94111868bd7eb3a',
             isCollateral: true,
             hasRewards: false,
         },
