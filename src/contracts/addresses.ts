@@ -14,9 +14,9 @@ import {
     TOTEM,
     APXETH,
     ALETH,
-    MSETH,
     YV_VELO_ALETH_WETH,
     MOO_VELO_V2_OP_VELO,
+    MSETH,
 } from '../utils'
 
 // All keys are mandatory
@@ -243,7 +243,6 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
             hasRewards: false,
         },
-
         WBTC: {
             address: '0x68f180fcCe6836688e9084f035309E29Bf0A2095',
             decimals: 8,
@@ -365,6 +364,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             isCollateral: true,
             hasRewards: false,
         },
+        // MSETH: {
+        //     address: '0x1610e3c85dd44Af31eD7f33a63642012Dca0C5A5',
+        //     decimals: 18,
+        //     symbol: 'MSETH',
+        //     label: 'MSETH',
+        //     bytes32String: MSETH,
+        //     collateralJoin: '0x5C9ffB1Cbc258f1dEe1F7Bc29c75a65A965CC526',
+        //     collateralAuctionHouse: '0x08d9565f961c757bA6A3e323601faa23CF75D5A2',
+        //     isCollateral: true,
+        //     hasRewards: false,
+        // },
         'YV-VELO-ALETH-WETH': {
             address: '0xf7D66b41Cd4241eae450fd9D2d6995754634D9f3',
             decimals: 18,
