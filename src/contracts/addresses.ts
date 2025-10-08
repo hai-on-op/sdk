@@ -18,6 +18,7 @@ import {
     YV_VELO_ALETH_WETH,
     YV_VELO_MSETH_WETH,
     MOO_VELO_V2_OP_VELO,
+    MOO_VELO_BOLD_LUSD,
     MSETH,
 } from '../utils'
 
@@ -407,6 +408,17 @@ const tokens: Record<GebDeployment, TokenList> = {
             bytes32String: YV_VELO_MSETH_WETH,
             collateralJoin: '0xBc2c13769453CD1F17523626a27A36d7849eb527',
             collateralAuctionHouse: '0x430555C6345f4A26DD123F81BE1925968f341A14',
+            isCollateral: true,
+            hasRewards: false,
+        },
+        'MOO-VELO-BOLD-LUSD': {
+            address: '0xC06C0A19d0A3eD7B3BA9D7c3101B6BC9634b84a9',
+            decimals: 18,
+            symbol: 'MOO-VELO-BOLD-LUSD',
+            label: 'MOO-VELO-BOLD-LUSD',
+            bytes32String: MOO_VELO_BOLD_LUSD,
+            collateralJoin: '0x807eBA431227e296ac38DfED5348e8a7D405d6dE',
+            collateralAuctionHouse: '0x05A58ad523854CE232130C49080050c84bE985F3',
             isCollateral: true,
             hasRewards: false,
         },
