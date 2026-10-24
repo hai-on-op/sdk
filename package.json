@@ -14,7 +14,7 @@
     "lint:check": "prettier --check .",
     "lint:fix": "sort-package-json && prettier --write .",
     "prepare": "husky install",
-    "test": "echo \"No tests yet\""
+    "test": "node --test test/*.test.cjs"
   },
   "lint-staged": {
     "package.json": "sort-package-json",

@@ -1,7 +1,8 @@
 import { ethers } from 'ethers'
 import { ContractApis } from './api/contract-apis'
 import { Auctions } from './auctions'
-import { TokenList, getTokenList } from './contracts/addresses'
+import { TokenList } from './contracts/addresses'
+import { CollateralConfiguration, copyCollateralConfiguration, createTokenList } from './contracts/collateral-config'
 import { ContractList, GebDeployment, getAddressList } from './contracts/index'
 import { GebError, GebErrorTypes } from './errors'
 import { BasicActions } from './proxy-action'
@@ -16,6 +17,8 @@ import { MerkleDistributor } from './merkle-distributor'
  *  management and the [[contracts | contract interface object]] to directly call smart contracts.
  */
 export class Geb {
+    /** API capability: additional collateral configuration is propagated to contracts and proxy actions. */
+    public static readonly collateralConfigurationVersion = 1
     /**
      * Object containing all GEB core smart contract instances for direct level interactions. All of the
      * following contract objects are one-to-one API typed to the underlying smart contracts. Read-only
@@ -81,6 +84,7 @@ export class Geb {
     public provider: ethers.providers.Provider
     public signer?: ethers.Signer
     protected addresses: ContractList
+    private collateralConfiguration: CollateralConfiguration
 
     /**
      * Constructor for the main Geb.js object.
@@ -89,7 +93,8 @@ export class Geb {
      */
     constructor(
         public network: GebDeployment,
-        signerOrProvider: ethers.Wallet | ethers.providers.JsonRpcSigner | ethers.providers.Provider
+        signerOrProvider: ethers.Wallet | ethers.providers.JsonRpcSigner | ethers.providers.Provider,
+        configuration: CollateralConfiguration = {}
     ) {
         if (ethers.providers.JsonRpcSigner.isSigner(signerOrProvider)) {
             this.signer = signerOrProvider
@@ -101,8 +106,9 @@ export class Geb {
         }
 
         this.addresses = getAddressList(network)
-        this.tokenList = getTokenList(network)
-        this.contracts = new ContractApis(network, signerOrProvider)
+        this.collateralConfiguration = copyCollateralConfiguration(configuration)
+        this.tokenList = createTokenList(network, this.collateralConfiguration)
+        this.contracts = new ContractApis(network, signerOrProvider, this.collateralConfiguration)
         this.auctions = new Auctions(this.contracts)
         this.liquidations = new LiquidationActions(this.contracts, this.tokenList)
         this.distributors = new MerkleDistributor(this.contracts, this.provider)
@@ -119,7 +125,7 @@ export class Geb {
         if (address === NULL_ADDRESS) {
             throw new GebError(GebErrorTypes.DOES_NOT_OWN_HAVE_PROXY)
         }
-        return new BasicActions(address, this.network, this.signer.provider)
+        return new BasicActions(address, this.network, this.provider, this.collateralConfiguration)
     }
 
     /**

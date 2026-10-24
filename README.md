@@ -12,6 +12,26 @@ The library is written in Typescript with full typing support. It allows access 
 npm install @hai-on-op/sdk
 ```
 
+### Additional collateral configuration
+
+`Geb` accepts an optional third argument of type `CollateralConfiguration`. Supply a reviewed `AdditionalCollateral` entry with its SDK `deployment`, distinct `symbol`, `address`, `bytes32String`, `collateralJoin`, `collateralAuctionHouse`, `decimals`, `label`, `isCollateral: true` and `hasRewards`:
+
+```typescript
+import { Geb, AdditionalCollateral } from '@hai-on-op/sdk'
+
+// Load metadata from your application's reviewed deployment manifest.
+const collateral: AdditionalCollateral = reviewedDeployment.collateral
+const geb = new Geb('mainnet', provider, { additionalCollaterals: [collateral] })
+const proxy = await geb.getProxyAction(ownerAddress)
+const transaction = await proxy.lockTokenCollateral(collateral.symbol, safeId, amount)
+```
+
+This configuration is local to the instance and propagates to contract APIs, liquidation metadata, and proxy actions. Direct `ContractApis` and `BasicActions` construction accepts the same configuration as its third and fourth argument, respectively. New entries cannot replace or alias existing token, collateral type, join, auction, or symbol identities. Mutating the input configuration after construction cannot redirect later proxy actions. Existing collateral metadata is unchanged. `Geb.collateralConfigurationVersion` and `BasicActions.collateralConfigurationVersion` are `1`; applications can require these capabilities before activation and inspect `proxy.getCollateralToken(symbol)` to confirm the captured proxy configuration without mutating it.
+
+Configuration validates identity and shape; it does not certify an on-chain deployment. Before enabling it in an app, verify the intended network and deployed contracts, join token/type/SAFEEngine binding, auction binding, live OracleRelayer parameters and governance adoption. Price data continues to come from the protocol's OracleRelayer, including an existing AERO Pyth feed where governance has configured that feed. This SDK does not override oracle prices or add new AERO collateral addresses by default. A new entry's rewards flag is metadata, not evidence that a rewards distributor is active.
+
+Build before running the offline regression suite: `yarn build && yarn test`. Tests use synthetic addresses and never submit transactions.
+
 
 ## Examples
 
