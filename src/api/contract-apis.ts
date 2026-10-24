@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import * as types from '../typechained'
 import { GebDeployment, getAddressList } from '../contracts'
-import { getTokenList } from '../contracts/addresses'
+import { CollateralConfiguration, createTokenList } from '../contracts/collateral-config'
 
 // Container class used to instantiate most GEB contracts
 // prettier-ignore
@@ -38,16 +38,17 @@ export class ContractApis {
     public systemCoin: types.ERC20
     public weth: types.WETH9
 
-    public tokenCollateralJoin: { [key: string]: types.ICoinJoin }
+    public tokenCollateralJoin: { [key: string]: types.ICollateralJoin }
     public tokenCollateralAuctionHouse: { [key: string]: types.ICollateralAuctionHouse }
 
     constructor(
         network: GebDeployment,
         signerOrProvider: ethers.Wallet | ethers.providers.JsonRpcSigner | ethers.providers.Provider,
+        configuration: CollateralConfiguration = {},
     ) {
         // Set the contract address list
         const addressList = getAddressList(network)
-        const tokenList = getTokenList(network)
+        const tokenList = createTokenList(network, configuration)
 
         this.systemCoin = types.ERC20__factory.connect(addressList.GEB_SYSTEM_COIN, signerOrProvider)
         this.protocolToken = types.ERC20__factory.connect(addressList.GEB_PROTOCOL_TOKEN, signerOrProvider)
@@ -80,6 +81,11 @@ export class ContractApis {
         this.proxyFactory = types.IHaiProxyFactory__factory.connect(addressList.PROXY_FACTORY, signerOrProvider)
         
         this.weth = types.WETH9__factory.connect(addressList.ETH, signerOrProvider)
+
+        this.tokenCollateralJoin = Object.values(tokenList).filter(token => token.isCollateral).reduce((accum, token) => {
+            const collateralJoin = types.ICollateralJoin__factory.connect(token.collateralJoin, signerOrProvider)
+            return { ...accum, [token.symbol]: collateralJoin }
+        }, {})
 
         this.tokenCollateralAuctionHouse = Object.values(tokenList).filter(token => token.isCollateral).reduce((accum, token) => {
             const collateralAuctionHouse = types.ICollateralAuctionHouse__factory.connect(token.collateralAuctionHouse, signerOrProvider)

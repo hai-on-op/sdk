@@ -2,7 +2,8 @@ import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { ethers } from 'ethers'
 import { ContractList, GebDeployment, getAddressList } from './contracts'
 
-import { TokenList, getTokenList } from './contracts/addresses'
+import { TokenData, TokenList } from './contracts/addresses'
+import { CollateralConfiguration, createTokenList } from './contracts/collateral-config'
 import * as types from './typechained'
 import { NULL_ADDRESS } from './utils'
 
@@ -10,6 +11,8 @@ import { NULL_ADDRESS } from './utils'
  * Convenience class to call functions from [BasicActions](https://github.com/reflexer-labs/geb-proxy-actions/blob/master/src/BasicActions.sol) through a proxy contract registered in the [GebProxyRegistry](https://github.com/reflexer-labs/geb-proxy-registry/blob/master/src/GebProxyRegistry.sol). These actions bundle multiple actions in one (e.g: open a safe + lock some ETH + draw some system coins).
  */
 export class BasicActions {
+    /** API capability shared with Geb for applications that must reject older SDKs. */
+    public static readonly collateralConfigurationVersion = 1
     /**
      * Underlying proxy object. Can be use to make custom calls to the proxy using `proxy.execute()` function.
      * For the details of each function
@@ -61,10 +64,11 @@ export class BasicActions {
          */
         public proxyAddress: string,
         network: GebDeployment,
-        private chainProvider: ethers.providers.Provider
+        private chainProvider: ethers.providers.Provider,
+        configuration: CollateralConfiguration = {}
     ) {
         this.addressList = getAddressList(network)
-        this.tokenList = getTokenList(network)
+        this.tokenList = createTokenList(network, configuration)
 
         this.proxy = types.IHaiProxy__factory.connect(proxyAddress, this.chainProvider)
 
@@ -103,6 +107,12 @@ export class BasicActions {
             this.proxyRewardedActionsAddress,
             this.chainProvider
         )
+    }
+
+    /** Snapshot used by clients to confirm which collateral a proxy action will encode. */
+    public getCollateralToken(symbol: string): TokenData | undefined {
+        const token = this.tokenList[symbol]
+        return token ? { ...token } : undefined
     }
 
     private async getProxiedTransactionRequest(
